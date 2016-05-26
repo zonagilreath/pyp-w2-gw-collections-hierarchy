@@ -29,7 +29,7 @@ setup(
     author='rmotr.com',
     author_email='questions@rmotr.com',
     license='CC BY-SA 4.0 License',
-    packages=['collections'],
+    packages=['collections_hierarchy'],
     maintainer='rmotr.com',
     tests_require=[
         'pytest==2.9.1',

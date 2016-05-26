@@ -5,13 +5,13 @@ END=" \#\#\# \033[0m\n"
 
 test:
 	@echo $(TAG)Running tests$(END)
-	PYTHONPATH=. py.test tests
+	PYTHONPATH=. py.test -s tests
 
 test-cov:
 	@echo $(TAG)Running tests with coverage$(END)
-	PYTHONPATH=. py.test --cov=collections tests
+	PYTHONPATH=. py.test --cov=collections_hierarchy tests
 
 coverage:
 	@echo $(TAG)Coverage report$(END)
-	@PYTHONPATH=. coverage run --source=collections $(shell which py.test) ./tests -q --tb=no >/dev/null; true
+	@PYTHONPATH=. coverage run --source=collections_hierarchy $(shell which py.test) ./tests -q --tb=no >/dev/null; true
 	@coverage report
