@@ -20,15 +20,15 @@ class DictTestCase(unittest.TestCase):
         self.assertTrue('a' in d1)
         self.assertFalse('z' in d1)
 
-    def test_list_len(self):
+    def test_dict_len(self):
         d1 = Dict({'a': 1, 'b': 2})
         self.assertEqual(len(d1), 2)
 
-    def test_list_count(self):
+    def test_dict_count(self):
         d1 = Dict({'a': 1, 'b': 2})
         self.assertEqual(d1.count(), 2)
 
-    def test_list_eq(self):
+    def test_dict_eq(self):
         d1 = Dict({'a': 1, 'b': 2})
         self.assertTrue(d1 == Dict({'a': 1, 'b': 2}))
 
