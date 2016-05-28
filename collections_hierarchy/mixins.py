@@ -3,18 +3,6 @@ class ComparableMixin(object):
         pass
 
     def __ne__(self, other):
-        return not self == other
-
-    def __lt__(self, other):
-        pass
-
-    def __gt__(self, other):
-        pass
-
-    def __le__(self, other):
-        pass
-
-    def __ge__(self, other):
         pass
 
 
@@ -23,11 +11,17 @@ class SequenceMixin(object):
         pass
 
     def __next__(self):
-        pass
+        """This method will rely on the get_elements() method of the
+        concrete class.
+        """
+        if not hasattr(self, 'get_elements'):
+            raise ValueError("get_elements method not found")
+        # Keep writing your code here
 
     next = __next__
 
     def __len__(self):
+        # Will rely on the iterator
         pass
 
     def __getitem__(self, key):
@@ -40,14 +34,17 @@ class SequenceMixin(object):
         pass
 
     def __contains__(self, item):
+        # Will rely on the iterator
         pass
 
 
 class RepresentableMixin(object):
     def __repr__(self):
+        # Will rely on the iterator or __str__
         pass
 
     def __str__(self):
+        # Will rely on the iterator
         pass
 
 
@@ -55,7 +52,8 @@ class ConstructibleMixin(object):
     DATA_ATTR_NAME = 'data'
 
     def __init__(self, initial=None):
-        pass
+        setattr(self, self.DATA_ATTR_NAME,
+                initial or self.DATA_DEFAULT_INITIAL)
 
 
 class OperableMixin(object):
