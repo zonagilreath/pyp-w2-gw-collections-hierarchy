@@ -1,7 +1,7 @@
 import unittest
 import six
 
-from collections_hierarchy.main import *
+from collections_hierarchy import Dict
 
 
 class DictTestCase(unittest.TestCase):
